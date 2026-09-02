@@ -14,6 +14,13 @@ For every mission, record separately: command discovered, important output, diag
 ## 1. FILESYSTEM HIERARCHY & LINUX BASICS
 
 1. Find the username of the account currently running your shell.
+root@ip-10-0-1-140:~# whoami
+root
+root@ip-10-0-1-140:~# id
+uid=0(root) gid=0(root) groups=0(root)
+root@ip-10-0-1-140:~# 
+root@ip-10-0-1-140:~# 
+
 
 2. Find the absolute path of your current working directory.
 
