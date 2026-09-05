@@ -13,65 +13,90 @@ For every mission, record separately: command discovered, important output, diag
 
 ## 1. FILESYSTEM HIERARCHY & LINUX BASICS
 
-1. Find the username of the account currently running your shell.
+1. Find the username of the account currently running your shell.  root@ip-172-31-28-15:~# whoami
+root
 
-2. Find the absolute path of your current working directory.
+3. Find the absolute path of your current working directory.  root@ip-172-31-28-15:~/command1# pwd
+/root/command1
 
-3. Find the Linux kernel release currently running on the server.
+4. Find the Linux kernel release currently running on the server.  root@ip-172-31-28-15:~/command1# uname -r
+7.0.0-1011-aws
 
-4. Find the Linux system/kernel name.
+5. Find the Linux system/kernel name.  root@ip-172-31-28-15:~/command1# uname -s
+Linux
 
-5. Display complete kernel and system information.
+6. Display complete kernel and system information.   uname -a
+Linux ip-172-31-28-15 7.0.0-1011-aws #11-Ubuntu SMP PREEMPT Thu Aug  6 15:41:35 UTC 2026 x86_64 GNU/Linux
 
-6. Identify the Linux distribution and release version.
+7. Identify the Linux distribution and release version.
 
-7. Find the server's configured hostname.
+8. Find the server's configured hostname. root@ip-172-31-28-15:~/command1#. hostname
+ip-172-31-28-15
 
-8. Identify whether the server is 32-bit or 64-bit.
+9. Identify whether the server is 32-bit or 64-bit.   name -m
+x86_64
 
-9. Display the current date and time.
+10. Display the current date and time.    root@ip-172-31-28-15:~/command1# date
+Sat Sep  5 16:09:01 UTC 2026
 
-10. Find how long the server has been running and its current load averages.
+11. Find how long the server has been running and its current load averages.   root@ip-172-31-28-15:~/command1# uptime
+ 16:09:43 up 19 min,  1 user,  load average: 0.00, 0.00, 0.00
 
-11. Identify the CPU model used by the server.
+12. Identify the CPU model used by the server. lscpu
+Model name:                Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
 
-12. Find the number of logical CPUs available.
+14. Find the number of logical CPUs available.
 
-13. Display total, used, free, and available memory.
+15. Display total, used, free, and available memory.  free -m
+               total        used        free      shared  buff/cache   available
+Mem:             908         545          89           7         388         362
 
-14. Display disk space usage for all mounted filesystems in a human-readable format.
+16. Display disk space usage for all mounted filesystems in a human-readable format. df -h
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        6.7G  4.5G  2.2G  68% /
+tmpfs            455M     0  455M   0% /dev/shm
+tmpfs            182M  892K  181M   1% /run
+efivarfs         128K  3.3K  120K   3% /sys/firmware/efi/efivars
+tmpfs            455M  4.8M  450M   2% /tmp
+none             1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none             1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p13  989M  163M  760M  18% /boot
+/dev/nvme0n1p15  105M  6.3M   99M   7% /boot/efi
+none             1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+none             1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+none             1.0M     0  1.0M   0% /run/credential
 
-15. Explore the system configuration directory and identify at least five important configuration files.
+17. Explore the system configuration directory and identify at least five important configuration files.
 
-16. Explore the system log directory and identify the major system/service logs present.
+18. Explore the system log directory and identify the major system/service logs present.
 
-17. Identify the home directories belonging to normal users.
+19. Identify the home directories belonging to normal users.
 
-18. Find the home directory used by the superuser account.
+20. Find the home directory used by the superuser account.
 
-19. Inspect the temporary-file directory and identify its purpose.
+21. Inspect the temporary-file directory and identify its purpose.
 
-20. Identify where common user-space programs and libraries are stored.
+22. Identify where common user-space programs and libraries are stored.
 
-21. Identify the standard location used for optional third-party applications.
+23. Identify the standard location used for optional third-party applications.
 
-22. Explore device files and identify examples representing disks or terminals.
+24. Explore device files and identify examples representing disks or terminals.
 
-23. Explore the process-information virtual filesystem and identify directories belonging to running processes.
+25. Explore the process-information virtual filesystem and identify directories belonging to running processes.
 
-24. Explore the kernel/device virtual filesystem and identify information about devices.
+26. Explore the kernel/device virtual filesystem and identify information about devices.
 
-25. Explore runtime state files and identify examples of PID files or sockets.
+27. Explore runtime state files and identify examples of PID files or sockets.
 
-26. Locate the server-side remote-login configuration directory.
+28. Locate the server-side remote-login configuration directory.
 
-27. Locate the current user's remote-login configuration and key directory.
+29. Locate the current user's remote-login configuration and key directory.
 
-28. Find the executable path of a common command available on the server.
+30. Find the executable path of a common command available on the server.
 
-29. Read the built-in documentation for a common Linux command and identify five useful options.
+31. Read the built-in documentation for a common Linux command and identify five useful options.
 
-30. Create a short system-information report containing the hostname, kernel, uptime, CPU, memory, and disk information.
+32. Create a short system-information report containing the hostname, kernel, uptime, CPU, memory, and disk information.
 
 ## 2. FILE & DIRECTORY MANAGEMENT
 
