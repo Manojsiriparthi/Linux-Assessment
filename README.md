@@ -100,21 +100,26 @@ none             1.0M     0  1.0M   0% /run/credential
 
 ## 2. FILE & DIRECTORY MANAGEMENT
 
-31. Create a file named `app.log`.
+31. Create a file named `app.log`.  touch app.log
 
-32. Create a directory named `devops`.
+32. Create a directory named `devops`. mkdir devops
 
-33. Create the nested directory structure `devops/project/src` in one operation.
+33. Create the nested directory structure `devops/project/src` in one operation.  mkdir -p devops/project/src
 
-34. Create `logs`, `scripts`, and `backup` inside the `devops` directory.
+34. Create `logs`, `scripts`, and `backup` inside the `devops` directory. mkdir logs
+root@ip-172-31-28-15:~/devops# mkdir backup
+root@ip-172-31-28-15:~/devops# mkdir scripts
+root@ip-172-31-28-15:~/devops# ls
+backup  logs  project  scripts
 
-35. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`.
+35. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`.  root@ip-172-31-28-15:~/devops/logs# touch app.log
+root@ip-172-31-28-15:~/devops/logs# touch error.log. root@ip-172-31-28-15:~/devops/logs# touch access.log
 
-36. Create a file named `README.txt` inside `devops`.
+36. Create a file named `README.txt` inside `devops`.  root@ip-172-31-28-15:~/devops# touch README.txt
 
-37. Make a copy of `app.log` named `app_backup.log`.
+37. Make a copy of `app.log` named `app_backup.log`.  root@ip-172-31-28-15:~/devops/logs# cp app.log app_backup.log
 
-38. Copy `app.log` into the `backup` directory.
+38. Copy `app.log` into the `backup` directory.   root@ip-172-31-28-15:~/devops# cp logs/app.log backup/app.log
 
 39. Copy the complete `devops` directory into another test directory.
 
