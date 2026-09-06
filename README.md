@@ -215,19 +215,19 @@ Change: 2026-09-06 17:33:35.939385124 +0000
 
 ## 3. VI, REDIRECTION & TEXT PRACTICE
 
-71. Open `app.log` in a terminal text editor.
+71. Open `app.log` in a terminal text editor.  cat app.log
 
-72. Add a new line to `app.log` and save the file.
+72. Add a new line to `app.log` and save the file.   vi app.log---" i"---esc---:wq
 
-73. Open a file, make a temporary change, and exit without saving.
+73. Open a file, make a temporary change, and exit without saving.   vi app.log---"i"---esc--- :q!
 
-74. Create `server.conf` using a terminal text editor.
+74. Create `server.conf` using a terminal text editor. 
 
-75. Verify the contents of a file after editing it.
+75. Verify the contents of a file after editing it. cat filename
 
-76. Create a file containing the current date.
+76. Create a file containing the current date. no idea
 
-77. Append the current uptime to an existing report without replacing its contents.
+77. Append the current uptime to an existing report without replacing its contents. no idea 
 
 78. Create a five-line server report from shell-generated text.
 
@@ -243,13 +243,13 @@ Change: 2026-09-06 17:33:35.939385124 +0000
 
 84. Display the beginning and end of a large log for quick inspection.
 
-85. Count the number of records in a text file.
+85. Count the number of records in a text file. cat -n filename
 
-86. Compare an original configuration with a modified copy.
+86. Compare an original configuration with a modified copy. diff source1 source2
 
 87. Check when a file was last modified and last accessed.
 
-88. Determine whether a file is text, binary, or another recognized type.
+88. Determine whether a file is text, binary, or another recognized type. file filename
 
 89. Find the executable location of three common Linux commands.
 
@@ -257,21 +257,23 @@ Change: 2026-09-06 17:33:35.939385124 +0000
 
 ## 4. USER & GROUP MANAGEMENT
 
-91. Create a user named `devuser` with a home directory.
+91. Create a user named `devuser` with a home directory. adduser devuser
 
-92. Create a second test user named `deployuser`.
+92. Create a second test user named `deployuser`.  root@ip-172-31-28-15:~/home# adduser deployuser
 
-93. Create a group named `devops`.
+93. Create a group named `devops`.  addgroup devops
 
-94. Create a group named `developers`.
+94. Create a group named `developers`. addgroup developers
 
-95. Set an initial password for `devuser`.
+95. Set an initial password for `devuser`. 
 
-96. Set an initial password for `deployuser`.
+96. Set an initial password for `deployuser`.  
 
-97. Display the numeric user ID, primary group, and supplementary groups for `devuser`.
+97. Display the numeric user ID, primary group, and supplementary groups for `devuser`.  id devuser
+uid=1004(devuser) gid=1004(devuser) groups=1004(devuser),100(users)
 
-98. Display all groups to which `devuser` currently belongs.
+98. Display all groups to which `devuser` currently belongs.  groups devuser
+devuser : devuser users
 
 99. Add `devuser` to the `devops` supplementary group without removing existing supplementary groups.
 
