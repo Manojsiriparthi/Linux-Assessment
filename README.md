@@ -286,15 +286,16 @@ devuser users devops developers
 
 103. Lock the `devuser` account. usermod -L devuser
 
-104. Verify that the account has been locked. 
+104. Verify that the account has been locked. root@ip-172-31-28-15:~# passwd -S devuser
+devuser L 2026-09-06 0 99999 7 -1
 
-105. Unlock the `devuser` account.
+105. Unlock the `devuser` account.  usermod -U devuser
 
-106. Change the login shell of a test user.
+106. Change the login shell of a test user.  no idea
 
-107. Change the home directory of a disposable test user.
+107. Change the home directory of a disposable test user. no idea
 
-108. Rename the `developers` group to `engineering`.
+108. Rename the `developers` group to `engineering`. root@ip-172-31-28-15:~# sudo groupmod -n engineering developers
 
 109. Display the local user-account database.
 
@@ -302,27 +303,30 @@ devuser users devops developers
 
 111. Inspect the protected password/account database using appropriate privileges.
 
-112. Count the number of local user entries.
+112. Count the number of local user entries. cat /etc/passwd | wc
+     39      57    2061
 
-113. Count the number of local group entries.
+113. Count the number of local group entries. 
 
-114. Find the `devuser` entry in the local user database.
+114. Find the `devuser` entry in the local user database.  root@ip-172-31-28-15:~# cat /etc/passwd | grep -i devuser
+devuser:x:1004:1004:,,,:/home/devuser:/bin/bash
 
-115. Find the `devops` or renamed group entry in the local group database.
+115. Find the `devops` or renamed group entry in the local group database.  root@ip-172-31-28-15:~# cat /etc/group | grep -i devops
+devops:x:1006:devuser
 
 116. Display recent successful and unsuccessful login records available through the local login history.
 
 117. If the user-information utility is installed, display information about `devuser`.
 
-118. Delete a disposable test user and verify that the account no longer exists.
+118. Delete a disposable test user and verify that the account no longer exists. sudo userdel test and cat /etc/passwd
 
-119. Delete a disposable test group after ensuring no required users depend on it.
+119. Delete a disposable test group after ensuring no required users depend on it.  sudo groupdel test_group
 
-120. Determine whether a test account is locked, expired, or otherwise restricted.
+120. Determine whether a test account is locked, expired, or otherwise restricted. sudo -S passwd
 
 ## 5. PERMISSIONS, OWNERSHIP & ACL
 
-121. Display the permission bits, owner, and group of `app.log`.
+121. Display the permission bits, owner, and group of `app.log`. 
 
 122. Set `app.log` so the owner can read/write, the group can read, and others can read.
 
