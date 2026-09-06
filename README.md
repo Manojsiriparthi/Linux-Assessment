@@ -121,69 +121,86 @@ root@ip-172-31-28-15:~/devops/logs# touch error.log. root@ip-172-31-28-15:~/devo
 
 38. Copy `app.log` into the `backup` directory.   root@ip-172-31-28-15:~/devops# cp logs/app.log backup/app.log
 
-39. Copy the complete `devops` directory into another test directory.
+39. Copy the complete `devops` directory into another test directory.  root@ip-172-31-28-15:~# cp -r devops test
 
-40. Move `error.log` into the `backup` directory.
+40. Move `error.log` into the `backup` directory.  root@ip-172-31-28-15:~/devops# mv logs/error.log backup/error.log
 
-41. Rename `access.log` to `web_access.log`.
+41. Rename `access.log` to `web_access.log`. root@ip-172-31-28-15:~/devops/logs# mv access.log web_access.log
 
-42. Rename the `scripts` directory to `automation`.
+42. Rename the `scripts` directory to `automation`.  root@ip-172-31-28-15:~/devops# mv scripts automation
 
-43. Remove a test file without affecting other files.
+43. Remove a test file without affecting other files. test is not a file it is a directory
 
-44. Remove an empty test directory.
+44. Remove an empty test directory.  rm test
+45. Remove a test directory containing only disposable files. cannot find test with disposable files 
 
-45. Remove a test directory containing only disposable files.
+46. Create a new file by sending text from the shell into a file.  ??
 
-46. Create a new file by sending text from the shell into a file.
+47. Replace the entire contents of `app.log` with a single line of text. vi app.log ----my name is sahithi
 
-47. Replace the entire contents of `app.log` with a single line of text.
+48. Add another line to `app.log` while preserving the existing contents. vi app.log----my name is sahithi,i am completing my assesment
 
-48. Add another line to `app.log` while preserving the existing contents.
+49. Add four separate lines to `app.log`. vi app.log----my name is sahithi
+i am completing my assesment
+i live in dudley
+i completed my masters in data analytics 
 
-49. Add four separate lines to `app.log`.
+50. Display all contents of `app.log`.  cat app.log---my name is sahithi
+i am completing my assesment
+i live in dudley
+i completed my masters in data analytics 
 
-50. Display all contents of `app.log`.
+51. Display all contents of `app.log` together with line numbers. cat -n app.log
+     1  my name is sahithi
+     2  i am completing my assesment
+     3  i live in dudley
+     4  i completed my masters in data analytics 
 
-51. Display all contents of `app.log` together with line numbers.
+52. Display only the first three lines of `app.log`. cat -n app.log | head -n 3
+     1  my name is sahithi
+     2  i am completing my assesment
+     3  i live in dudley
 
-52. Display only the first three lines of `app.log`.
+54. Display only the last three lines of `app.log`.  cat -n app.log | tail -n 3
+     2  i am completing my assesment
+     3  i live in dudley
+     4  i completed my masters in data analytics 
 
-53. Display only the last three lines of `app.log`.
+55. Read a large text file interactively without loading it all at once.  cat app.log | more
 
-54. Read a large text file interactively without loading it all at once.
+56. Read a text file using a simple page-at-a-time viewer. no idea
 
-55. Read a text file using a simple page-at-a-time viewer.
+57. Display the number of lines, words, and bytes in `app.log`. wc app.log
+  4  20 107 app.log
 
-56. Display the number of lines, words, and bytes in `app.log`.
+58. Display only the number of lines in `app.log`. wc -l app.log
+4 app.log
 
-57. Display only the number of lines in `app.log`.
+59. Search `app.log` for entries containing the word `ERROR`. r cat app.log | grep ERROR
 
-58. Search `app.log` for entries containing the word `ERROR`.
+60. Search a log for `error` regardless of letter case. cat app.log | grep -i error
 
-59. Search a log for `error` regardless of letter case.
+61. Search all files under `devops` recursively for the word `ERROR`. 
 
-60. Search all files under `devops` recursively for the word `ERROR`.
+62. Find every file ending in `.log` below the current directory.
 
-61. Find every file ending in `.log` below the current directory.
+63. Find files modified during the last 24 hours.
 
-62. Find files modified during the last 24 hours.
+64. Find files larger than 10 MB in a disposable test directory.
 
-63. Find files larger than 10 MB in a disposable test directory.
+65. Find empty files under a test directory.
 
-64. Find empty files under a test directory.
+66. Compare two configuration files and identify their differences.
 
-65. Compare two configuration files and identify their differences.
+67. Remove all contents from `app.log` while keeping the file itself.
 
-66. Remove all contents from `app.log` while keeping the file itself.
+68. Verify that `app.log` still exists after its contents were cleared.
 
-67. Verify that `app.log` still exists after its contents were cleared.
+69. Create `server.conf` and determine what kind of file it is.
 
-68. Create `server.conf` and determine what kind of file it is.
+70. Display detailed filesystem metadata for `app.log`.
 
-69. Display detailed filesystem metadata for `app.log`.
-
-70. Rename a file after verifying its current name and location.
+71. Rename a file after verifying its current name and location.
 
 ## 3. VI, REDIRECTION & TEXT PRACTICE
 
