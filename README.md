@@ -395,11 +395,15 @@ root@ip-172-31-28-15:~# ls -la | grep -i test.sh
 
 ## 6. PROCESS MANAGEMENT
 
-151. Display the processes associated with your current terminal.
+151. Display the processes associated with your current terminal.  root@ip-172-31-28-15:~# ps
+    PID TTY          TIME CMD
+   2819 pts/1    00:00:00 sudo
+   2820 pts/1    00:00:00 bash
+   2919 pts/1    00:00:00 ps
 
-152. Display every running process with its user and command information.
+152. Display every running process with its user and command information. root@ip-172-31-28-15:~# ps -ef
 
-153. Display process IDs, users, CPU usage, and memory usage in a custom view.
+153. Display process IDs, users, CPU usage, and memory usage in a custom view. ps -ef
 
 154. Find a running process by name.
 
