@@ -275,17 +275,18 @@ uid=1004(devuser) gid=1004(devuser) groups=1004(devuser),100(users)
 98. Display all groups to which `devuser` currently belongs.  groups devuser
 devuser : devuser users
 
-99. Add `devuser` to the `devops` supplementary group without removing existing supplementary groups.
+99. Add `devuser` to the `devops` supplementary group without removing existing supplementary groups.  usermod -aG devops devuser
 
-100. Add `devuser` to the `developers` supplementary group while preserving previous memberships.
+100. Add `devuser` to the `developers` supplementary group while preserving previous memberships.   usermod -aG developers devuser
 
-101. Verify the supplementary group memberships after the changes.
+101. Verify the supplementary group memberships after the changes.  devuser@ip-172-31-28-15:~$ groups
+devuser users devops developers
 
-102. Force `devuser` to change the password at the next login.
+102. Force `devuser` to change the password at the next login. 
 
-103. Lock the `devuser` account.
+103. Lock the `devuser` account. usermod -L devuser
 
-104. Verify that the account has been locked.
+104. Verify that the account has been locked. 
 
 105. Unlock the `devuser` account.
 
