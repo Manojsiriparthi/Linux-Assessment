@@ -353,17 +353,17 @@ root@ip-172-31-28-15:~# ls -la | grep -i test.sh
 
 130. Set a test directory so the owner has full access and the group can read/traverse it. chmod 740 test
 
-131. Interpret the owner, group, and other permission fields shown for a file.
+131. Interpret the owner, group, and other permission fields shown for a file. ls- la | grep -i filename
 
-132. Display numeric permission information and metadata for a file.
+132. Display numeric permission information and metadata for a file. 
 
-133. Change the owner of a test file to `devuser`.
+133. Change the owner of a test file to `devuser`. chown devuser:root test.sh
 
-134. Change the group of a test file to `devops`.
+134. Change the group of a test file to `devops`. chown root:devops test.sh
 
-135. Change both the owner and group of a test file.
+135. Change both the owner and group of a test file. chwon devuser:devops test.sh
 
-136. Recursively correct ownership for a controlled project directory.
+136. Recursively correct ownership for a controlled project directory. 
 
 137. Display the current default permission mask used when new files are created.
 
