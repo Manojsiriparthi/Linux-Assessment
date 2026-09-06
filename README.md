@@ -326,25 +326,32 @@ devops:x:1006:devuser
 
 ## 5. PERMISSIONS, OWNERSHIP & ACL
 
-121. Display the permission bits, owner, and group of `app.log`. 
+121. Display the permission bits, owner, and group of `app.log`. root@ip-172-31-28-15:~# ls -la | grep -i app.log
+-rw-r--r--  1 root root        0 Sep  5 19:06 app.log
 
-122. Set `app.log` so the owner can read/write, the group can read, and others can read.
+122. Set `app.log` so the owner can read/write, the group can read, and others can read. chmod 544 app.log
 
-123. Set `deploy.sh` so the owner can read/write/execute and group/others can read/execute.
+123. Set `deploy.sh` so the owner can read/write/execute and group/others can read/execute.  chmod 755 deploy.sh
+root@ip-172-31-28-15:~# ls -la | grep -i deploy.sh
+-rwxr-xr-x  1 root root        0 Sep  6 21:21 deploy.sh
 
-124. Give only the owner execute permission on a test script.
+124. Give only the owner execute permission on a test script.   chmod 100 test.sh
+root@ip-172-31-28-15:~# ls -la | grep -i test.sh
+---x------  1 root root        0 Sep  6 21:26 test.sh
 
-125. Remove write permission for other users from a test file.
+125. Remove write permission for other users from a test file. chmod 775 test.sh
+root@ip-172-31-28-15:~# ls -la | grep -i test.sh
+-rwxrwxr-x  1 root root        0 Sep  6 21:26 test.sh
 
-126. Give the group read and write access to a test file.
+126. Give the group read and write access to a test file. chmod 060 test.sh
 
-127. Remove group write access from a test file.
+127. Remove group write access from a test file.chmod 050 test.sh
 
-128. Set a test file so only its owner can read and write it.
+128. Set a test file so only its owner can read and write it. chmod 600 test.sh
 
-129. Set a test file so the owner has full access and the group has read access.
+129. Set a test file so the owner has full access and the group has read access. chmod 740 test.sh
 
-130. Set a test directory so the owner has full access and the group can read/traverse it.
+130. Set a test directory so the owner has full access and the group can read/traverse it. chmod 740 test
 
 131. Interpret the owner, group, and other permission fields shown for a file.
 
