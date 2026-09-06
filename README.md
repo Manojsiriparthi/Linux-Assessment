@@ -13,75 +13,106 @@ For every mission, record separately: command discovered, important output, diag
 
 ## 1. FILESYSTEM HIERARCHY & LINUX BASICS
 
-1. Find the username of the account currently running your shell.
+1. Find the username of the account currently running your shell.------- whoami <img width="730" height="176" alt="image" src="https://github.com/user-attachments/assets/3f62c52f-3955-45bb-a9fe-de69ed682837" />
 
-2. Find the absolute path of your current working directory.
 
-3. Find the Linux kernel release currently running on the server.
+2. Find the absolute path of your current working directory.--------- pwd <img width="856" height="224" alt="image" src="https://github.com/user-attachments/assets/4f046f7c-21ed-4976-afa2-df040c8a5125" />
 
-4. Find the Linux system/kernel name.
 
-5. Display complete kernel and system information.
+3. Find the Linux kernel release currently running on the server.------- uname -r <img width="848" height="372" alt="image" src="https://github.com/user-attachments/assets/90b78d33-8d55-4515-90a9-c884574dfdf7" />
 
-6. Identify the Linux distribution and release version.
 
-7. Find the server's configured hostname.
+4. Find the Linux system/kernel name.--------- uname -s  <img width="810" height="334" alt="image" src="https://github.com/user-attachments/assets/6ab0ad43-0310-4d67-94b2-4f21e48f5c6a" />
 
-8. Identify whether the server is 32-bit or 64-bit.
 
-9. Display the current date and time.
+5. Display complete kernel and system information.--------- uname -a <img width="2416" height="384" alt="image" src="https://github.com/user-attachments/assets/5dbc936c-f27b-4faf-8327-4e9a3c35cf3c" />
 
-10. Find how long the server has been running and its current load averages.
 
-11. Identify the CPU model used by the server.
+6. Identify the Linux distribution and release version. ------ cat /etc/os-release <img width="2336" height="1032" alt="image" src="https://github.com/user-attachments/assets/57ef3e1f-639b-4b44-8e13-8152e458da1b" />
 
-12. Find the number of logical CPUs available.
 
-13. Display total, used, free, and available memory.
+7. Find the server's configured hostname.------------- hostname  <img width="1192" height="314" alt="image" src="https://github.com/user-attachments/assets/2fcd3235-de25-4482-ae6b-de17a11c2428" />
 
-14. Display disk space usage for all mounted filesystems in a human-readable format.
 
-15. Explore the system configuration directory and identify at least five important configuration files.
+8. Identify whether the server is 32-bit or 64-bit. ---------- uname -m <img width="952" height="334" alt="image" src="https://github.com/user-attachments/assets/20f669c6-3a81-4a5a-bbb7-5fdcd3c81d73" />
 
-16. Explore the system log directory and identify the major system/service logs present.
 
-17. Identify the home directories belonging to normal users.
+9. Display the current date and time. ---------- date <img width="886" height="292" alt="image" src="https://github.com/user-attachments/assets/75bbb9cb-161c-4c73-b96e-31b4981d775a" />
+
+
+10. Find how long the server has been running and its current load averages. ------- uptime <img width="1740" height="432" alt="image" src="https://github.com/user-attachments/assets/b21d8344-609e-4a81-a72a-4b75f282699c" />
+
+
+11. Identify the CPU model used by the server.---------  lscpu | grep -i "model name" <img width="2412" height="292" alt="image" src="https://github.com/user-attachments/assets/e6b53299-108a-4896-b2f2-0ead5094ec0b" />
+
+12. Find the number of logical CPUs available. ------- lscpu <img width="2174" height="372" alt="image" src="https://github.com/user-attachments/assets/5eff7f10-a38f-41d0-9e89-a998cc454f2c" />
+
+
+13. Display total, used, free, and available memory.-------- free -h <img width="2322" height="440" alt="image" src="https://github.com/user-attachments/assets/ba22f593-dc7e-4288-ab3a-cdf1be505572" />
+
+
+14. Display disk space usage for all mounted filesystems in a human-readable format. ------- df -h <img width="2290" height="882" alt="image" src="https://github.com/user-attachments/assets/e00fc91a-8422-416f-af94-74089e5e5f84" />
+
+
+15. Explore the system configuration directory and identify at least five important configuration files. -------ls -l/etc <img width="1782" height="1348" alt="image" src="https://github.com/user-attachments/assets/2a3f45f9-b472-4405-b7ad-8f8be0b0c1dc" />
+
+
+16. Explore the system log directory and identify the major system/service logs present.--------- sudo ls -lh/var/log <img width="2216" height="1394" alt="image" src="https://github.com/user-attachments/assets/8fe20058-7a30-4cd4-8817-ac9537ffd1be" />
+
+
+17. Identify the home directories belonging to normal users.-------- ls -la /home <img width="1324" height="298" alt="image" src="https://github.com/user-attachments/assets/0f90b7a9-0d76-4faa-ade9-45ebdd397bfc" />
+
 
 18. Find the home directory used by the superuser account.
 
-19. Inspect the temporary-file directory and identify its purpose.
+19. Inspect the temporary-file directory and identify its purpose.---------  ls -ld /tmp <img width="1186" height="300" alt="image" src="https://github.com/user-attachments/assets/7e52a109-b276-4e20-9339-29dc1d9f086f" />
 
-20. Identify where common user-space programs and libraries are stored.
 
-21. Identify the standard location used for optional third-party applications.
+20. Identify where common user-space programs and libraries are stored.----- ls -ld /lib* <img width="1306" height="296" alt="image" src="https://github.com/user-attachments/assets/6499ab0f-1fc0-46bc-8824-76055d3fb3b2" />
 
-22. Explore device files and identify examples representing disks or terminals.
 
-23. Explore the process-information virtual filesystem and identify directories belonging to running processes.
 
-24. Explore the kernel/device virtual filesystem and identify information about devices.
+21. Identify the standard location used for optional third-party applications. -------- ls -la /opt <img width="1418" height="244" alt="image" src="https://github.com/user-attachments/assets/fd06da17-f776-4151-a762-829f17938e43" />
 
-25. Explore runtime state files and identify examples of PID files or sockets.
 
-26. Locate the server-side remote-login configuration directory.
+22. Explore device files and identify examples representing disks or terminals.--------  ls -l/dev <img width="2042" height="1326" alt="image" src="https://github.com/user-attachments/assets/e7ca683a-f36d-4c73-be45-05c28cad4176" />
 
-27. Locate the current user's remote-login configuration and key directory.
 
-28. Find the executable path of a common command available on the server.
+23. Explore the process-information virtual filesystem and identify directories belonging to running processes. ------- ps aux <img width="2756" height="1136" alt="image" src="https://github.com/user-attachments/assets/00f3c938-03bb-401d-918a-0694ad6af0fb" />
 
-29. Read the built-in documentation for a common Linux command and identify five useful options.
 
-30. Create a short system-information report containing the hostname, kernel, uptime, CPU, memory, and disk information.
+24. Explore the kernel/device virtual filesystem and identify information about devices. ------ ls -la /sys/class      <img width="1680" height="1168" alt="image" src="https://github.com/user-attachments/assets/4d052cff-3a08-4f32-829e-358b8b1b9da2" />
+
+
+25. Explore runtime state files and identify examples of PID files or sockets. ------- ls -la /run<img width="1876" height="1128" alt="image" src="https://github.com/user-attachments/assets/903265ba-5f63-414b-aeaa-19433b6ca987" />
+
+
+26. Locate the server-side remote-login configuration directory. 
+
+27. Locate the current user's remote-login configuration and key directory.------ sudo systemctl status ssh <img width="2392" height="1160" alt="image" src="https://github.com/user-attachments/assets/33ade468-1fee-4d1f-9e2e-263b3e737433" />
+
+
+28. Find the executable path of a common command available on the server.------ which ls <img width="1260" height="346" alt="image" src="https://github.com/user-attachments/assets/a80c6e7e-0ce0-46af-91e0-d63d27ab2b17" />
+
+
+29. Read the built-in documentation for a common Linux command and identify five useful options.  ------- man ls <img width="2902" height="1154" alt="image" src="https://github.com/user-attachments/assets/b1cb40a1-32d4-4d26-b153-8bdb12c473f8" />
+
+
+30. Create a short system-information report containing the hostname, kernel, uptime, CPU, memory, and disk information. --  top,htop,glance <img width="2514" height="1176" alt="image" src="https://github.com/user-attachments/assets/e7bf5b2b-5509-47fb-84b7-407f0aba8e5c" />
+
 
 ## 2. FILE & DIRECTORY MANAGEMENT
 
-31. Create a file named `app.log`.
+31. Create a file named `app.log`. ----- touch app.log <img width="1094" height="344" alt="image" src="https://github.com/user-attachments/assets/7e130de5-2a10-444f-a27d-8f5e66416442" />
 
-32. Create a directory named `devops`.
 
-33. Create the nested directory structure `devops/project/src` in one operation.
+32. Create a directory named `devops`. ------- mkdir devops <img width="890" height="318" alt="image" src="https://github.com/user-attachments/assets/b2d5e8b3-8771-45a8-9552-af966a1e8003" />
 
-34. Create `logs`, `scripts`, and `backup` inside the `devops` directory.
+
+33. Create the nested directory structure `devops/project/src` in one operation. ------ mkdir -p devops/projects/src  <img width="1464" height="624" alt="image" src="https://github.com/user-attachments/assets/8081b3c1-75ef-4e05-8e15-de0d69b182d4" />
+
+
+34. Create `logs`, `scripts`, and `backup` inside the `devops` directory. 
 
 35. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`.
 
