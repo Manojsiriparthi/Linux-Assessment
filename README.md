@@ -180,27 +180,38 @@ i completed my masters in data analytics
 
 60. Search a log for `error` regardless of letter case. cat app.log | grep -i error
 
-61. Search all files under `devops` recursively for the word `ERROR`. 
+61. Search all files under `devops` recursively for the word `ERROR`. no idea
 
-62. Find every file ending in `.log` below the current directory.
+62. Find every file ending in `.log` below the current directory.  find . -type f -name "*.log"
+./web_access.log
+./app_backup.log
+./app.log
 
-63. Find files modified during the last 24 hours.
+63. Find files modified during the last 24 hours.  no idea
 
 64. Find files larger than 10 MB in a disposable test directory.
 
 65. Find empty files under a test directory.
 
-66. Compare two configuration files and identify their differences.
+66. Compare two configuration files and identify their differences. diff "source" "destination"
 
-67. Remove all contents from `app.log` while keeping the file itself.
+67. Remove all contents from `app.log` while keeping the file itself. > app.log
 
-68. Verify that `app.log` still exists after its contents were cleared.
+68. Verify that `app.log` still exists after its contents were cleared. root@ip-172-31-28-15:~/devops/logs# ls app.log  app_backup.log  backup  we_baccess.log
 
-69. Create `server.conf` and determine what kind of file it is.
+69. Create `server.conf` and determine what kind of file it is. root@ip-172-31-28-15:~/devops# file server.conf
 
-70. Display detailed filesystem metadata for `app.log`.
+70. Display detailed filesystem metadata for `app.log`. stat app.log
+  File: app.log
+  size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: 259,1   Inode: 1829        Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2026-09-06 17:33:40.600383719 +0000
+Modify: 2026-09-06 17:33:35.939385124 +0000
+Change: 2026-09-06 17:33:35.939385124 +0000
+ Birth: 2026-09-06 17:19:50.350568702 +0000
 
-71. Rename a file after verifying its current name and location.
+71. Rename a file after verifying its current name and location. find /. type f -name file name, mv source destination
 
 ## 3. VI, REDIRECTION & TEXT PRACTICE
 
