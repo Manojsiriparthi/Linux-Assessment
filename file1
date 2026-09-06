@@ -1,0 +1,37 @@
+1. git init----to initialize git repository 
+2. git config---to store the details or set or controls the variables
+3. git add---add the file into staging area  
+4. git status- to check the status of file 
+5. git commit -m "message".---to commit file into remote repo
+6. git push -u origin "branch"---to push the file from local to remote repo branch
+7. git log or git log --oneline---to find all the commits in repo
+8. git pull--- to sync the files and download from remote to local repo
+9. git fetch---to download the file from remote to local without making changes
+10.git clone- to to get the repository from remote to local
+11.git cherry "ID"---to pick particular commits from one branch to other without whole files and sync
+12.git merge---sync all the branches in local 
+13.git fetch---sync all the brances in local with clean history
+14.git amend---to add any info inside the file which is commited before pushed into remote repo
+15.git reset---to delete the file from local repo after commit to remote and the files will be deleted 
+16.git reset --soft "ID"---delets the file in local repo but still shows in working/local
+17.git reset --hard "ID" ---deletes the file from local repo completely
+18.git reset --mixed "ID"---deleted the file but still shows in staging area
+19: git revert---deletes the file but still shows in the commits that has done and can undo that
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

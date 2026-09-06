@@ -13,163 +13,221 @@ For every mission, record separately: command discovered, important output, diag
 
 ## 1. FILESYSTEM HIERARCHY & LINUX BASICS
 
-1. Find the username of the account currently running your shell.
+1. Find the username of the account currently running your shell.  root@ip-172-31-28-15:~# whoami
+root
 
-2. Find the absolute path of your current working directory.
+3. Find the absolute path of your current working directory.  root@ip-172-31-28-15:~/command1# pwd
+/root/command1
 
-3. Find the Linux kernel release currently running on the server.
+4. Find the Linux kernel release currently running on the server.  root@ip-172-31-28-15:~/command1# uname -r
+7.0.0-1011-aws
 
-4. Find the Linux system/kernel name.
+5. Find the Linux system/kernel name.  root@ip-172-31-28-15:~/command1# uname -s
+Linux
 
-5. Display complete kernel and system information.
+6. Display complete kernel and system information.   uname -a
+Linux ip-172-31-28-15 7.0.0-1011-aws #11-Ubuntu SMP PREEMPT Thu Aug  6 15:41:35 UTC 2026 x86_64 GNU/Linux
 
-6. Identify the Linux distribution and release version.
+7. Identify the Linux distribution and release version.
 
-7. Find the server's configured hostname.
+8. Find the server's configured hostname. root@ip-172-31-28-15:~/command1#. hostname
+ip-172-31-28-15
 
-8. Identify whether the server is 32-bit or 64-bit.
+9. Identify whether the server is 32-bit or 64-bit.   name -m
+x86_64
 
-9. Display the current date and time.
+10. Display the current date and time.    root@ip-172-31-28-15:~/command1# date
+Sat Sep  5 16:09:01 UTC 2026
 
-10. Find how long the server has been running and its current load averages.
+11. Find how long the server has been running and its current load averages.   root@ip-172-31-28-15:~/command1# uptime
+ 16:09:43 up 19 min,  1 user,  load average: 0.00, 0.00, 0.00
 
-11. Identify the CPU model used by the server.
+12. Identify the CPU model used by the server. lscpu
+Model name:                Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz
 
-12. Find the number of logical CPUs available.
+14. Find the number of logical CPUs available.
 
-13. Display total, used, free, and available memory.
+15. Display total, used, free, and available memory.  free -m
+               total        used        free      shared  buff/cache   available
+Mem:             908         545          89           7         388         362
 
-14. Display disk space usage for all mounted filesystems in a human-readable format.
+16. Display disk space usage for all mounted filesystems in a human-readable format. df -h
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/root        6.7G  4.5G  2.2G  68% /
+tmpfs            455M     0  455M   0% /dev/shm
+tmpfs            182M  892K  181M   1% /run
+efivarfs         128K  3.3K  120K   3% /sys/firmware/efi/efivars
+tmpfs            455M  4.8M  450M   2% /tmp
+none             1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+none             1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p13  989M  163M  760M  18% /boot
+/dev/nvme0n1p15  105M  6.3M   99M   7% /boot/efi
+none             1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+none             1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+none             1.0M     0  1.0M   0% /run/credential
 
-15. Explore the system configuration directory and identify at least five important configuration files.
+17. Explore the system configuration directory and identify at least five important configuration files.
 
-16. Explore the system log directory and identify the major system/service logs present.
+18. Explore the system log directory and identify the major system/service logs present.
 
-17. Identify the home directories belonging to normal users.
+19. Identify the home directories belonging to normal users.
 
-18. Find the home directory used by the superuser account.
+20. Find the home directory used by the superuser account.
 
-19. Inspect the temporary-file directory and identify its purpose.
+21. Inspect the temporary-file directory and identify its purpose.
 
-20. Identify where common user-space programs and libraries are stored.
+22. Identify where common user-space programs and libraries are stored.
 
-21. Identify the standard location used for optional third-party applications.
+23. Identify the standard location used for optional third-party applications.
 
-22. Explore device files and identify examples representing disks or terminals.
+24. Explore device files and identify examples representing disks or terminals.
 
-23. Explore the process-information virtual filesystem and identify directories belonging to running processes.
+25. Explore the process-information virtual filesystem and identify directories belonging to running processes.
 
-24. Explore the kernel/device virtual filesystem and identify information about devices.
+26. Explore the kernel/device virtual filesystem and identify information about devices.
 
-25. Explore runtime state files and identify examples of PID files or sockets.
+27. Explore runtime state files and identify examples of PID files or sockets.
 
-26. Locate the server-side remote-login configuration directory.
+28. Locate the server-side remote-login configuration directory.
 
-27. Locate the current user's remote-login configuration and key directory.
+29. Locate the current user's remote-login configuration and key directory.
 
-28. Find the executable path of a common command available on the server.
+30. Find the executable path of a common command available on the server.
 
-29. Read the built-in documentation for a common Linux command and identify five useful options.
+31. Read the built-in documentation for a common Linux command and identify five useful options.
 
-30. Create a short system-information report containing the hostname, kernel, uptime, CPU, memory, and disk information.
+32. Create a short system-information report containing the hostname, kernel, uptime, CPU, memory, and disk information.
 
 ## 2. FILE & DIRECTORY MANAGEMENT
 
-31. Create a file named `app.log`.
+31. Create a file named `app.log`.  touch app.log
 
-32. Create a directory named `devops`.
+32. Create a directory named `devops`. mkdir devops
 
-33. Create the nested directory structure `devops/project/src` in one operation.
+33. Create the nested directory structure `devops/project/src` in one operation.  mkdir -p devops/project/src
 
-34. Create `logs`, `scripts`, and `backup` inside the `devops` directory.
+34. Create `logs`, `scripts`, and `backup` inside the `devops` directory. mkdir logs
+root@ip-172-31-28-15:~/devops# mkdir backup
+root@ip-172-31-28-15:~/devops# mkdir scripts
+root@ip-172-31-28-15:~/devops# ls
+backup  logs  project  scripts
 
-35. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`.
+35. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`.  root@ip-172-31-28-15:~/devops/logs# touch app.log
+root@ip-172-31-28-15:~/devops/logs# touch error.log. root@ip-172-31-28-15:~/devops/logs# touch access.log
 
-36. Create a file named `README.txt` inside `devops`.
+36. Create a file named `README.txt` inside `devops`.  root@ip-172-31-28-15:~/devops# touch README.txt
 
-37. Make a copy of `app.log` named `app_backup.log`.
+37. Make a copy of `app.log` named `app_backup.log`.  root@ip-172-31-28-15:~/devops/logs# cp app.log app_backup.log
 
-38. Copy `app.log` into the `backup` directory.
+38. Copy `app.log` into the `backup` directory.   root@ip-172-31-28-15:~/devops# cp logs/app.log backup/app.log
 
-39. Copy the complete `devops` directory into another test directory.
+39. Copy the complete `devops` directory into another test directory.  root@ip-172-31-28-15:~# cp -r devops test
 
-40. Move `error.log` into the `backup` directory.
+40. Move `error.log` into the `backup` directory.  root@ip-172-31-28-15:~/devops# mv logs/error.log backup/error.log
 
-41. Rename `access.log` to `web_access.log`.
+41. Rename `access.log` to `web_access.log`. root@ip-172-31-28-15:~/devops/logs# mv access.log web_access.log
 
-42. Rename the `scripts` directory to `automation`.
+42. Rename the `scripts` directory to `automation`.  root@ip-172-31-28-15:~/devops# mv scripts automation
 
-43. Remove a test file without affecting other files.
+43. Remove a test file without affecting other files. test is not a file it is a directory
 
-44. Remove an empty test directory.
+44. Remove an empty test directory.  rm test
+45. Remove a test directory containing only disposable files. cannot find test with disposable files 
 
-45. Remove a test directory containing only disposable files.
+46. Create a new file by sending text from the shell into a file.  ??
 
-46. Create a new file by sending text from the shell into a file.
+47. Replace the entire contents of `app.log` with a single line of text. vi app.log ----my name is sahithi
 
-47. Replace the entire contents of `app.log` with a single line of text.
+48. Add another line to `app.log` while preserving the existing contents. vi app.log----my name is sahithi,i am completing my assesment
 
-48. Add another line to `app.log` while preserving the existing contents.
+49. Add four separate lines to `app.log`. vi app.log----my name is sahithi
+i am completing my assesment
+i live in dudley
+i completed my masters in data analytics 
 
-49. Add four separate lines to `app.log`.
+50. Display all contents of `app.log`.  cat app.log---my name is sahithi
+i am completing my assesment
+i live in dudley
+i completed my masters in data analytics 
 
-50. Display all contents of `app.log`.
+51. Display all contents of `app.log` together with line numbers. cat -n app.log
+     1  my name is sahithi
+     2  i am completing my assesment
+     3  i live in dudley
+     4  i completed my masters in data analytics 
 
-51. Display all contents of `app.log` together with line numbers.
+52. Display only the first three lines of `app.log`. cat -n app.log | head -n 3
+     1  my name is sahithi
+     2  i am completing my assesment
+     3  i live in dudley
 
-52. Display only the first three lines of `app.log`.
+54. Display only the last three lines of `app.log`.  cat -n app.log | tail -n 3
+     2  i am completing my assesment
+     3  i live in dudley
+     4  i completed my masters in data analytics 
 
-53. Display only the last three lines of `app.log`.
+55. Read a large text file interactively without loading it all at once.  cat app.log | more
 
-54. Read a large text file interactively without loading it all at once.
+56. Read a text file using a simple page-at-a-time viewer. no idea
 
-55. Read a text file using a simple page-at-a-time viewer.
+57. Display the number of lines, words, and bytes in `app.log`. wc app.log
+  4  20 107 app.log
 
-56. Display the number of lines, words, and bytes in `app.log`.
+58. Display only the number of lines in `app.log`. wc -l app.log
+4 app.log
 
-57. Display only the number of lines in `app.log`.
+59. Search `app.log` for entries containing the word `ERROR`. r cat app.log | grep ERROR
 
-58. Search `app.log` for entries containing the word `ERROR`.
+60. Search a log for `error` regardless of letter case. cat app.log | grep -i error
 
-59. Search a log for `error` regardless of letter case.
+61. Search all files under `devops` recursively for the word `ERROR`. no idea
 
-60. Search all files under `devops` recursively for the word `ERROR`.
+62. Find every file ending in `.log` below the current directory.  find . -type f -name "*.log"
+./web_access.log
+./app_backup.log
+./app.log
 
-61. Find every file ending in `.log` below the current directory.
+63. Find files modified during the last 24 hours.  no idea
 
-62. Find files modified during the last 24 hours.
+64. Find files larger than 10 MB in a disposable test directory.
 
-63. Find files larger than 10 MB in a disposable test directory.
+65. Find empty files under a test directory.
 
-64. Find empty files under a test directory.
+66. Compare two configuration files and identify their differences. diff "source" "destination"
 
-65. Compare two configuration files and identify their differences.
+67. Remove all contents from `app.log` while keeping the file itself. > app.log
 
-66. Remove all contents from `app.log` while keeping the file itself.
+68. Verify that `app.log` still exists after its contents were cleared. root@ip-172-31-28-15:~/devops/logs# ls app.log  app_backup.log  backup  we_baccess.log
 
-67. Verify that `app.log` still exists after its contents were cleared.
+69. Create `server.conf` and determine what kind of file it is. root@ip-172-31-28-15:~/devops# file server.conf
 
-68. Create `server.conf` and determine what kind of file it is.
+70. Display detailed filesystem metadata for `app.log`. stat app.log
+  File: app.log
+  size: 0               Blocks: 0          IO Block: 4096   regular empty file
+Device: 259,1   Inode: 1829        Links: 1
+Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2026-09-06 17:33:40.600383719 +0000
+Modify: 2026-09-06 17:33:35.939385124 +0000
+Change: 2026-09-06 17:33:35.939385124 +0000
+ Birth: 2026-09-06 17:19:50.350568702 +0000
 
-69. Display detailed filesystem metadata for `app.log`.
-
-70. Rename a file after verifying its current name and location.
+71. Rename a file after verifying its current name and location. find /. type f -name file name, mv source destination
 
 ## 3. VI, REDIRECTION & TEXT PRACTICE
 
-71. Open `app.log` in a terminal text editor.
+71. Open `app.log` in a terminal text editor.  cat app.log
 
-72. Add a new line to `app.log` and save the file.
+72. Add a new line to `app.log` and save the file.   vi app.log---" i"---esc---:wq
 
-73. Open a file, make a temporary change, and exit without saving.
+73. Open a file, make a temporary change, and exit without saving.   vi app.log---"i"---esc--- :q!
 
-74. Create `server.conf` using a terminal text editor.
+74. Create `server.conf` using a terminal text editor. 
 
-75. Verify the contents of a file after editing it.
+75. Verify the contents of a file after editing it. cat filename
 
-76. Create a file containing the current date.
+76. Create a file containing the current date. no idea
 
-77. Append the current uptime to an existing report without replacing its contents.
+77. Append the current uptime to an existing report without replacing its contents. no idea 
 
 78. Create a five-line server report from shell-generated text.
 
@@ -185,13 +243,13 @@ For every mission, record separately: command discovered, important output, diag
 
 84. Display the beginning and end of a large log for quick inspection.
 
-85. Count the number of records in a text file.
+85. Count the number of records in a text file. cat -n filename
 
-86. Compare an original configuration with a modified copy.
+86. Compare an original configuration with a modified copy. diff source1 source2
 
 87. Check when a file was last modified and last accessed.
 
-88. Determine whether a file is text, binary, or another recognized type.
+88. Determine whether a file is text, binary, or another recognized type. file filename
 
 89. Find the executable location of three common Linux commands.
 
@@ -199,41 +257,45 @@ For every mission, record separately: command discovered, important output, diag
 
 ## 4. USER & GROUP MANAGEMENT
 
-91. Create a user named `devuser` with a home directory.
+91. Create a user named `devuser` with a home directory. adduser devuser
 
-92. Create a second test user named `deployuser`.
+92. Create a second test user named `deployuser`.  root@ip-172-31-28-15:~/home# adduser deployuser
 
-93. Create a group named `devops`.
+93. Create a group named `devops`.  addgroup devops
 
-94. Create a group named `developers`.
+94. Create a group named `developers`. addgroup developers
 
-95. Set an initial password for `devuser`.
+95. Set an initial password for `devuser`. 
 
-96. Set an initial password for `deployuser`.
+96. Set an initial password for `deployuser`.  
 
-97. Display the numeric user ID, primary group, and supplementary groups for `devuser`.
+97. Display the numeric user ID, primary group, and supplementary groups for `devuser`.  id devuser
+uid=1004(devuser) gid=1004(devuser) groups=1004(devuser),100(users)
 
-98. Display all groups to which `devuser` currently belongs.
+98. Display all groups to which `devuser` currently belongs.  groups devuser
+devuser : devuser users
 
-99. Add `devuser` to the `devops` supplementary group without removing existing supplementary groups.
+99. Add `devuser` to the `devops` supplementary group without removing existing supplementary groups.  usermod -aG devops devuser
 
-100. Add `devuser` to the `developers` supplementary group while preserving previous memberships.
+100. Add `devuser` to the `developers` supplementary group while preserving previous memberships.   usermod -aG developers devuser
 
-101. Verify the supplementary group memberships after the changes.
+101. Verify the supplementary group memberships after the changes.  devuser@ip-172-31-28-15:~$ groups
+devuser users devops developers
 
-102. Force `devuser` to change the password at the next login.
+102. Force `devuser` to change the password at the next login. 
 
-103. Lock the `devuser` account.
+103. Lock the `devuser` account. usermod -L devuser
 
-104. Verify that the account has been locked.
+104. Verify that the account has been locked. root@ip-172-31-28-15:~# passwd -S devuser
+devuser L 2026-09-06 0 99999 7 -1
 
-105. Unlock the `devuser` account.
+105. Unlock the `devuser` account.  usermod -U devuser
 
-106. Change the login shell of a test user.
+106. Change the login shell of a test user.  no idea
 
-107. Change the home directory of a disposable test user.
+107. Change the home directory of a disposable test user. no idea
 
-108. Rename the `developers` group to `engineering`.
+108. Rename the `developers` group to `engineering`. root@ip-172-31-28-15:~# sudo groupmod -n engineering developers
 
 109. Display the local user-account database.
 
@@ -241,57 +303,67 @@ For every mission, record separately: command discovered, important output, diag
 
 111. Inspect the protected password/account database using appropriate privileges.
 
-112. Count the number of local user entries.
+112. Count the number of local user entries. cat /etc/passwd | wc
+     39      57    2061
 
-113. Count the number of local group entries.
+113. Count the number of local group entries. 
 
-114. Find the `devuser` entry in the local user database.
+114. Find the `devuser` entry in the local user database.  root@ip-172-31-28-15:~# cat /etc/passwd | grep -i devuser
+devuser:x:1004:1004:,,,:/home/devuser:/bin/bash
 
-115. Find the `devops` or renamed group entry in the local group database.
+115. Find the `devops` or renamed group entry in the local group database.  root@ip-172-31-28-15:~# cat /etc/group | grep -i devops
+devops:x:1006:devuser
 
 116. Display recent successful and unsuccessful login records available through the local login history.
 
 117. If the user-information utility is installed, display information about `devuser`.
 
-118. Delete a disposable test user and verify that the account no longer exists.
+118. Delete a disposable test user and verify that the account no longer exists. sudo userdel test and cat /etc/passwd
 
-119. Delete a disposable test group after ensuring no required users depend on it.
+119. Delete a disposable test group after ensuring no required users depend on it.  sudo groupdel test_group
 
-120. Determine whether a test account is locked, expired, or otherwise restricted.
+120. Determine whether a test account is locked, expired, or otherwise restricted. sudo -S passwd
 
 ## 5. PERMISSIONS, OWNERSHIP & ACL
 
-121. Display the permission bits, owner, and group of `app.log`.
+121. Display the permission bits, owner, and group of `app.log`. root@ip-172-31-28-15:~# ls -la | grep -i app.log
+-rw-r--r--  1 root root        0 Sep  5 19:06 app.log
 
-122. Set `app.log` so the owner can read/write, the group can read, and others can read.
+122. Set `app.log` so the owner can read/write, the group can read, and others can read. chmod 544 app.log
 
-123. Set `deploy.sh` so the owner can read/write/execute and group/others can read/execute.
+123. Set `deploy.sh` so the owner can read/write/execute and group/others can read/execute.  chmod 755 deploy.sh
+root@ip-172-31-28-15:~# ls -la | grep -i deploy.sh
+-rwxr-xr-x  1 root root        0 Sep  6 21:21 deploy.sh
 
-124. Give only the owner execute permission on a test script.
+124. Give only the owner execute permission on a test script.   chmod 100 test.sh
+root@ip-172-31-28-15:~# ls -la | grep -i test.sh
+---x------  1 root root        0 Sep  6 21:26 test.sh
 
-125. Remove write permission for other users from a test file.
+125. Remove write permission for other users from a test file. chmod 775 test.sh
+root@ip-172-31-28-15:~# ls -la | grep -i test.sh
+-rwxrwxr-x  1 root root        0 Sep  6 21:26 test.sh
 
-126. Give the group read and write access to a test file.
+126. Give the group read and write access to a test file. chmod 060 test.sh
 
-127. Remove group write access from a test file.
+127. Remove group write access from a test file.chmod 050 test.sh
 
-128. Set a test file so only its owner can read and write it.
+128. Set a test file so only its owner can read and write it. chmod 600 test.sh
 
-129. Set a test file so the owner has full access and the group has read access.
+129. Set a test file so the owner has full access and the group has read access. chmod 740 test.sh
 
-130. Set a test directory so the owner has full access and the group can read/traverse it.
+130. Set a test directory so the owner has full access and the group can read/traverse it. chmod 740 test
 
-131. Interpret the owner, group, and other permission fields shown for a file.
+131. Interpret the owner, group, and other permission fields shown for a file. ls- la | grep -i filename
 
-132. Display numeric permission information and metadata for a file.
+132. Display numeric permission information and metadata for a file. 
 
-133. Change the owner of a test file to `devuser`.
+133. Change the owner of a test file to `devuser`. chown devuser:root test.sh
 
-134. Change the group of a test file to `devops`.
+134. Change the group of a test file to `devops`. chown root:devops test.sh
 
-135. Change both the owner and group of a test file.
+135. Change both the owner and group of a test file. chwon devuser:devops test.sh
 
-136. Recursively correct ownership for a controlled project directory.
+136. Recursively correct ownership for a controlled project directory. 
 
 137. Display the current default permission mask used when new files are created.
 
@@ -323,11 +395,15 @@ For every mission, record separately: command discovered, important output, diag
 
 ## 6. PROCESS MANAGEMENT
 
-151. Display the processes associated with your current terminal.
+151. Display the processes associated with your current terminal.  root@ip-172-31-28-15:~# ps
+    PID TTY          TIME CMD
+   2819 pts/1    00:00:00 sudo
+   2820 pts/1    00:00:00 bash
+   2919 pts/1    00:00:00 ps
 
-152. Display every running process with its user and command information.
+152. Display every running process with its user and command information. root@ip-172-31-28-15:~# ps -ef
 
-153. Display process IDs, users, CPU usage, and memory usage in a custom view.
+153. Display process IDs, users, CPU usage, and memory usage in a custom view. ps -ef
 
 154. Find a running process by name.
 
