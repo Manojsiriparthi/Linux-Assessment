@@ -106,85 +106,99 @@ For every mission, record separately: command discovered, important output, diag
 31. Create a file named `app.log`. ----- touch app.log <img width="1094" height="344" alt="image" src="https://github.com/user-attachments/assets/7e130de5-2a10-444f-a27d-8f5e66416442" />
 
 
-32. Create a directory named `devops`. ------- mkdir devops <img width="890" height="318" alt="image" src="https://github.com/user-attachments/assets/b2d5e8b3-8771-45a8-9552-af966a1e8003" />
+32. Create a directory named `devops`. ------- mkdir devops <img width="1390" height="340" alt="image" src="https://github.com/user-attachments/assets/b471212d-cdb0-45a8-acaf-f69be3d51b9b" />
 
 
-33. Create the nested directory structure `devops/project/src` in one operation. ------ mkdir -p devops/projects/src  <img width="1464" height="624" alt="image" src="https://github.com/user-attachments/assets/8081b3c1-75ef-4e05-8e15-de0d69b182d4" />
+33. Create the nested directory structure `devops/project/src` in one operation. ------ mkdir -p devops/project/src   <img width="1790" height="718" alt="image" src="https://github.com/user-attachments/assets/77cd2b18-6fc3-4b4b-bffc-b03a9d97914c" />
 
 
-34. Create `logs`, `scripts`, and `backup` inside the `devops` directory. 
+34. Create `logs`, `scripts`, and `backup` inside the `devops` directory. ------- mkdir -p devops/{logs,scripts,backup}
+    <img width="2106" height="784" alt="image" src="https://github.com/user-attachments/assets/2b96e36a-d569-4b5a-a48b-447b37dd661e" />
 
-35. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`.
 
-36. Create a file named `README.txt` inside `devops`.
+36. Create `app.log`, `error.log`, and `access.log` inside `devops/logs`. -------- touch app.log error.log access.log
+    <img width="1626" height="298" alt="image" src="https://github.com/user-attachments/assets/4ffe2800-7690-4b09-9ba7-59e1ef0e552d" />
 
-37. Make a copy of `app.log` named `app_backup.log`.
+37. Make a copy of app.log named app_backup.log. --------  cp app.log app_backup.log <img width="1884" height="546" alt="image" src="https://github.com/user-attachments/assets/d2c8cffb-9075-45d5-90a4-680ce497c3f0" />
 
-38. Copy `app.log` into the `backup` directory.
 
-39. Copy the complete `devops` directory into another test directory.
+38. Create a file named `README.txt` inside `devops`. -----------  touch devops/README.txt   <img width="1592" height="528" alt="image" src="https://github.com/user-attachments/assets/6b7ea597-c9b8-4e13-8a92-7f55e12b1a6e" />
+    
 
-40. Move `error.log` into the `backup` directory.
+39. Make a copy of `app.log` named `app_backup.log`. --------- cp devops/logs/app.log devops/logs/app_backup.log     <img width="2504" height="526" alt="image" src="https://github.com/user-attachments/assets/ecb3889d-23e7-4450-9a7b-ca98ea685213" />
 
-41. Rename `access.log` to `web_access.log`.
+40. Copy `app.log` into the `backup` directory. --------- cp app.log devops/backup/    <img width="2058" height="1096" alt="image" src="https://github.com/user-attachments/assets/19bbd76b-aa90-4f54-8b36-f4ec5b1738f8" />
 
-42. Rename the `scripts` directory to `automation`.
 
-43. Remove a test file without affecting other files.
+41. Copy the complete `devops` directory into another test directory.---- cp -r devops test.    <img width="1564" height="382" alt="image" src="https://github.com/user-attachments/assets/90a443c8-8b92-4ad6-8d66-23b8622b0a0a" />
 
-44. Remove an empty test directory.
 
-45. Remove a test directory containing only disposable files.
+42. Move `error.log` into the `backup` directory. --------- mv devops/logs/error.log devops/backup/    <img width="2154" height="320" alt="image" src="https://github.com/user-attachments/assets/56c90ed6-f87b-4719-9784-89c2b48d0fec" />
 
-46. Create a new file by sending text from the shell into a file.
+43. Rename `access.log` to `web_access.log`.-------- mv devops/logs/access.log devops/logs/web_access.log <img width="2602" height="354" alt="image" src="https://github.com/user-attachments/assets/e437b462-1311-4b9a-adbd-14db4af615cd" />
 
-47. Replace the entire contents of `app.log` with a single line of text.
 
-48. Add another line to `app.log` while preserving the existing contents.
+44. Rename the `scripts` directory to `automation`.-------- mv devops/scripts devops/automation <img width="2090" height="328" alt="image" src="https://github.com/user-attachments/assets/df196c10-7868-4b51-b3e7-b4443cc6146f" />
 
-49. Add four separate lines to `app.log`.
 
-50. Display all contents of `app.log`.
+45. Remove a test file without affecting other files.----- rm test file.  <img width="1600" height="870" alt="image" src="https://github.com/user-attachments/assets/cd515258-3ea9-49eb-8f0a-4473598f50fa" />
 
-51. Display all contents of `app.log` together with line numbers.
 
-52. Display only the first three lines of `app.log`.
+46. Remove an empty test directory. ------ rmdir testdirectory.  <img width="1822" height="710" alt="image" src="https://github.com/user-attachments/assets/1d35bf8c-53cb-41f7-9ffd-2931c2b685e0" />
 
-53. Display only the last three lines of `app.log`.
 
-54. Read a large text file interactively without loading it all at once.
+47. Remove a test directory containing only disposable files.------- rm -r disposable <img width="2382" height="728" alt="image" src="https://github.com/user-attachments/assets/7ce2d7e9-2f99-4a57-bd21-57c29c8ecfcc" />
 
-55. Read a text file using a simple page-at-a-time viewer.
 
-56. Display the number of lines, words, and bytes in `app.log`.
+48. Create a new file by sending text from the shell into a file.
 
-57. Display only the number of lines in `app.log`.
+49. Replace the entire contents of `app.log` with a single line of text.
 
-58. Search `app.log` for entries containing the word `ERROR`.
+50. Add another line to `app.log` while preserving the existing contents.
 
-59. Search a log for `error` regardless of letter case.
+51. Add four separate lines to `app.log`.
 
-60. Search all files under `devops` recursively for the word `ERROR`.
+52. Display all contents of `app.log`.
 
-61. Find every file ending in `.log` below the current directory.
+53. Display all contents of `app.log` together with line numbers.
 
-62. Find files modified during the last 24 hours.
+54. Display only the first three lines of `app.log`.
 
-63. Find files larger than 10 MB in a disposable test directory.
+55. Display only the last three lines of `app.log`.
 
-64. Find empty files under a test directory.
+56. Read a large text file interactively without loading it all at once.
 
-65. Compare two configuration files and identify their differences.
+57. Read a text file using a simple page-at-a-time viewer.
 
-66. Remove all contents from `app.log` while keeping the file itself.
+58. Display the number of lines, words, and bytes in `app.log`.
 
-67. Verify that `app.log` still exists after its contents were cleared.
+59. Display only the number of lines in `app.log`.
 
-68. Create `server.conf` and determine what kind of file it is.
+60. Search `app.log` for entries containing the word `ERROR`.
 
-69. Display detailed filesystem metadata for `app.log`.
+61. Search a log for `error` regardless of letter case.
 
-70. Rename a file after verifying its current name and location.
+62. Search all files under `devops` recursively for the word `ERROR`.
+
+63. Find every file ending in `.log` below the current directory.
+
+64. Find files modified during the last 24 hours.
+
+65. Find files larger than 10 MB in a disposable test directory.
+
+66. Find empty files under a test directory.
+
+67. Compare two configuration files and identify their differences.
+
+68. Remove all contents from `app.log` while keeping the file itself.
+
+69. Verify that `app.log` still exists after its contents were cleared.
+
+70. Create `server.conf` and determine what kind of file it is.
+
+71. Display detailed filesystem metadata for `app.log`.
+
+72. Rename a file after verifying its current name and location.
 
 ## 3. VI, REDIRECTION & TEXT PRACTICE
 
