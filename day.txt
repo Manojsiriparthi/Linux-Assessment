@@ -1,0 +1,101 @@
+TASK 1 – EC2, AMI, IAM, ASG, Spot, Scheduler & Cost Optimization
+1. EC2 Instance Families
+
+We created 8 EC2 instances across different AWS regions and used different instance families such as T3, T4g, M6i, C6i and R6i.
+I understood that each family is designed for a different workload — C family for CPU-intensive workloads, R family for memory-intensive workloads, M family for balanced/general workloads, and T family for burstable workloads.
+
+📸 Screenshot: Attach EC2 Console screenshot showing the 8 instances and their instance types.
+
+2. Packer – Custom AMI
+
+We installed Packer and created a custom Ubuntu AMI containing Docker, SSM Agent, CloudWatch Agent, OS patches and basic SSH hardening.
+I understood that Packer helps us build a standard reusable server image, so we don't need to manually install and configure the same software on every EC2 instance.
+
+📸 Screenshot: Attach Packer successful build output and AWS AMI screenshot.
+
+3. IAM Roles & Instance Profiles
+
+We configured an IAM role and instance profile for EC2 so applications can access required AWS services without storing access keys on the server.
+I understood the concept of least privilege, where the role should contain only the required permissions instead of giving unnecessary access.
+
+📸 Screenshot: Attach IAM Role → Policies and EC2 → IAM Role/Instance Profile screenshot.
+
+4. Auto Scaling Group & CloudWatch Alarms
+
+We worked with an Auto Scaling Group and configured target tracking to maintain the required CPU utilization.
+I understood that Auto Scaling automatically increases or decreases EC2 capacity based on workload, while CloudWatch alarms provide the metrics/conditions used for scaling actions.
+
+📸 Screenshot: Attach ASG configuration and CloudWatch alarm screenshot.
+
+5. Spot Instances & Cost Optimization
+
+We studied Spot Instances and their use for workloads that can tolerate interruption, helping reduce EC2 costs compared with On-Demand instances.
+I understood capacity rebalancing and interruption handling, and that Savings Plans can be considered for predictable long-running compute usage.
+
+📸 Screenshot: Attach EC2 Spot/ASG configuration screenshot.
+
+6. Lambda + EventBridge Scheduler
+
+We created a Lambda function and EventBridge schedule to automate EC2 start/stop operations during business hours.
+I understood that EventBridge acts as the scheduler and invokes Lambda, while Lambda performs the EC2 action such as start or stop.
+
+📸 Screenshot: Attach Lambda function and EventBridge schedule/target screenshot.
+
+7. Compute Optimizer
+
+We checked AWS Compute Optimizer to understand EC2 right-sizing and cost optimization recommendations.
+I understood that Compute Optimizer analyzes resource utilization and can recommend a more suitable instance type when an EC2 instance is over-sized or under-sized.
+
+📸 Screenshot: Attach Compute Optimizer → EC2 Recommendations screenshot.
+
+8. EC2 Inventory & Cost Dashboard
+
+We worked with EC2 inventory, resource tags, Cost Explorer and CloudWatch Dashboard to understand infrastructure and cost visibility.
+I understood that tags such as Project, Environment and CostCenter help identify ownership and allocate costs, while Cost Explorer helps analyze spending.
+
+📸 Screenshot: Attach EC2 tags/inventory + Cost Explorer screenshot.
+
+📸 Screenshot: Attach CloudWatch Dashboard showing EC2 metrics.
+
+TASK 2 – VPC USING TERRAFORM
+1. VPC & Subnets
+
+We created a custom VPC using Terraform with public and private subnets across Availability Zones.
+I understood that a VPC provides an isolated network, while subnets divide that network and allow us to separate internet-facing and internal resources.
+
+📸 Screenshot: Attach VPC and subnet configuration from AWS Console.
+
+2. Internet Gateway & NAT Gateway
+
+We configured an Internet Gateway for public subnet internet access and a NAT Gateway for private resources that need outbound internet access.
+I understood that private instances can access the internet through NAT without becoming directly reachable from the internet.
+
+📸 Screenshot: Attach Internet Gateway and NAT Gateway screenshot.
+
+3. Route Tables
+
+We created separate route tables for public and private subnets and associated them with the appropriate subnets.
+I understood that route tables determine where network traffic should go, such as Internet Gateway for public traffic and NAT Gateway for private outbound traffic.
+
+📸 Screenshot: Attach Route Tables and subnet associations.
+
+4. Security Groups & Network ACLs
+
+We configured Security Groups and Network ACLs to control network traffic at different levels.
+I understood that Security Groups are stateful and attached to resources, while NACLs are stateless and operate at the subnet level.
+
+📸 Screenshot: Attach Security Group and NACL configuration.
+
+5. VPC Endpoints
+
+We configured VPC endpoints to allow private resources to access AWS services without depending on public internet connectivity.
+I understood that endpoints can improve security, reliability and network control, especially for private subnets.
+
+📸 Screenshot: Attach VPC Endpoints screenshot.
+
+6. VPC Flow Logs
+
+We configured VPC Flow Logs to capture information about network traffic flowing through the VPC.
+I understood that Flow Logs are useful for network troubleshooting, security investigation and traffic analysis.
+
+📸 Screenshot: Attach VPC Flow Logs configuration/log destination screenshot.
