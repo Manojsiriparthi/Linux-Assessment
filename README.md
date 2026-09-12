@@ -150,55 +150,73 @@ For every mission, record separately: command discovered, important output, diag
 47. Remove a test directory containing only disposable files.------- rm -r disposable <img width="2382" height="728" alt="image" src="https://github.com/user-attachments/assets/7ce2d7e9-2f99-4a57-bd21-57c29c8ecfcc" />
 
 
-48. Create a new file by sending text from the shell into a file.
+48. Create a new file by sending text from the shell into a file. -------- echo "Hello people, welcome to the class" > newfile.txt   <img width="1800" height="390" alt="image" src="https://github.com/user-attachments/assets/0298c3aa-0d49-41b9-b8bd-781a4821c1d9" />
 
-49. Replace the entire contents of `app.log` with a single line of text.
 
-50. Add another line to `app.log` while preserving the existing contents.
+49. Replace the entire contents of `app.log` with a single line of text. ------ echo "This is my first commit." > app.log  <img width="2116" height="1078" alt="image" src="https://github.com/user-attachments/assets/37b0304f-772f-451d-afed-44d2515262aa" />
 
-51. Add four separate lines to `app.log`.
 
-52. Display all contents of `app.log`.
+50. Add another line to `app.log` while preserving the existing contents. - echo "this is my second commit." >>app.log <img width="1548" height="300" alt="image" src="https://github.com/user-attachments/assets/d6f0c617-e540-4d48-93b0-00975b01cf00" />
 
-53. Display all contents of `app.log` together with line numbers.
 
-54. Display only the first three lines of `app.log`.
+51. Add four separate lines to `app.log`. ---- vi app.log <img width="978" height="464" alt="image" src="https://github.com/user-attachments/assets/f01ae267-eb63-4e47-85f0-21b4e1d128ea" />
 
-55. Display only the last three lines of `app.log`.
 
-56. Read a large text file interactively without loading it all at once.
+52. Display all contents of `app.log`. <img width="978" height="464" alt="image" src="https://github.com/user-attachments/assets/aeaa5833-1a8f-4ecb-9b00-8e92ce15650c" />
 
-57. Read a text file using a simple page-at-a-time viewer.
 
-58. Display the number of lines, words, and bytes in `app.log`.
+53. Display all contents of `app.log` together with line numbers. cat -n app.log <img width="926" height="348" alt="image" src="https://github.com/user-attachments/assets/6403146c-4bf4-4c49-a2c2-ca9a23407d58" />
 
-59. Display only the number of lines in `app.log`.
 
-60. Search `app.log` for entries containing the word `ERROR`.
+54. Display only the first three lines of `app.log`. -------  head -n 3 app.log <img width="1268" height="338" alt="image" src="https://github.com/user-attachments/assets/5a28d66f-04bf-457b-8fa4-862023d4d649" />
 
-61. Search a log for `error` regardless of letter case.
+55. Display only the last three lines of `app.log' ------   tail -n 3 app.log <img width="1040" height="270" alt="image" src="https://github.com/user-attachments/assets/bb054582-2001-4af3-bd63-5af626c9f821" />
 
-62. Search all files under `devops` recursively for the word `ERROR`.
+    
+57.   Read a large text file interactively without loading it all at once. less app.log <img width="2478" height="1472" alt="image" src="https://github.com/user-attachments/assets/126206d2-f276-4111-8751-030a0330e7ca" />
 
-63. Find every file ending in `.log` below the current directory.
+59. Read a text file using a simple page-at-a-time viewer. more app.log <img width="798" height="370" alt="image" src="https://github.com/user-attachments/assets/f45a01cc-44af-4b65-911c-7b7d6c7aa114" />
 
-64. Find files modified during the last 24 hours.
 
-65. Find files larger than 10 MB in a disposable test directory.
+60. Display the number of lines, words, and bytes in `app.log`. wc app.log <img width="1006" height="240" alt="image" src="https://github.com/user-attachments/assets/607f5d82-391b-4a6c-a036-5ed99604d85a" />
 
-66. Find empty files under a test directory.
 
-67. Compare two configuration files and identify their differences.
+61. Display only the number of lines in `app.log`.------ wc -l app.log <img width="948" height="238" alt="image" src="https://github.com/user-attachments/assets/a64948de-a3ab-4169-a9cc-0e86360992b1" />
 
-68. Remove all contents from `app.log` while keeping the file itself.
 
-69. Verify that `app.log` still exists after its contents were cleared.
+62. Search `app.log` for entries containing the word `ERROR`. ----- grep "ERROR" app.log <img width="1394" height="176" alt="image" src="https://github.com/user-attachments/assets/28f5a2bc-3b81-4f34-8e89-446bb310d0fb" />
 
-70. Create `server.conf` and determine what kind of file it is.
 
-71. Display detailed filesystem metadata for `app.log`.
+63. Search a log for `error` regardless of letter case. ------ grep -i "error" app.log <img width="1304" height="334" alt="image" src="https://github.com/user-attachments/assets/dbe6fadc-9a5b-40f7-9e65-f2057852c105" />
 
-72. Rename a file after verifying its current name and location.
+
+64. Search all files under `devops` recursively for the word `ERROR`. ------- grep -r "ERROR" devops/  <img width="1262" height="390" alt="image" src="https://github.com/user-attachments/assets/63fc5e7b-9b64-487b-8075-29170f80fccf" />
+
+
+65. Find every file ending in `.log` below the current directory. find / -type f -name "*.log" <img width="1288" height="556" alt="image" src="https://github.com/user-attachments/assets/3d377b26-2226-4459-a111-3a5c9571caaa" />
+
+
+66. Find files modified during the last 24 hours. find . -type f -mtime -1  <img width="1242" height="382" alt="image" src="https://github.com/user-attachments/assets/6c6bf852-7c85-4617-8f07-39223c40b290" />
+
+
+67. Find files larger than 10 MB in a disposable test directory. find test -type f -size +10M <img width="1232" height="278" alt="image" src="https://github.com/user-attachments/assets/94625940-86e3-47a7-87e4-cf6c6aba2559" />
+
+
+68. Find empty files under a test directory. find test -type f -empty <img width="1570" height="450" alt="image" src="https://github.com/user-attachments/assets/1bd81fb1-c457-40db-9ad1-b5aeee9e9d12" />
+
+    
+70. Compare two configuration files and identify their differences. diff config1.conf config2.conf. <img width="1354" height="370" alt="image" src="https://github.com/user-attachments/assets/939827da-16d0-4226-ac81-5c6b217bbf03" />
+
+
+71. Remove all contents from `app.log` while keeping the file itself. > app.log <img width="1358" height="512" alt="image" src="https://github.com/user-attachments/assets/f4d31db3-a2cb-454b-bae0-eefdaf7a8fd5" />
+
+72. Verify that `app.log` still exists after its contents were cleared. ------ ls -l app.log <img width="1132" height="366" alt="image" src="https://github.com/user-attachments/assets/63194f5f-70ce-4e74-9de7-292c41596066" />
+
+. Create `server.conf` and determine what kind of file it is.
+
+74. Display detailed filesystem metadata for `app.log`.
+
+75. Rename a file after verifying its current name and location.
 
 ## 3. VI, REDIRECTION & TEXT PRACTICE
 
